@@ -1,3 +1,3 @@
 module whensea.com/golang-jsonrpc-demo
 
-go 1.14
+go 1.16
