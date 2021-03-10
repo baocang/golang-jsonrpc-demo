@@ -1,0 +1,37 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: golang-jsonrpc
+  namespace: develop
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "demo.mutton.cloud"
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: golang-jsonrpc
+  namespace: develop
+spec:
+  hosts:
+  - "demo.mutton.cloud"
+  gateways:
+  - golang-jsonrpc
+  http:
+  - match:
+    - uri:
+        prefix: "/golang/"
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: golang-jsonrpc.develop.svc.cluster.local
+        port:
+          number: 8080
