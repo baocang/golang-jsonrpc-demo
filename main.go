@@ -16,7 +16,7 @@ type Args struct {
 	B int
 }
 
-// Arith representss service Arith with method Multiply
+// Arith represents service Arith with method Multiply
 type Arith int
 
 // Result of RPC call is of this type
