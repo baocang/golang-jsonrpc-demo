@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+metadata:
+  name: golang-jsonrpc-demo
+build:
+  artifacts:
+    - image: baocang/golang-jsonrpc-demo
+      buildpacks:
+        builder: 'gcr.io/buildpacks/builder:v1'
+  tagPolicy:
+    sha256: {}
+deploy:
+  kubectl:
+    manifests:
+      - k8s/service.yaml
