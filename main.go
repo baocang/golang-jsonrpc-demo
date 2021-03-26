@@ -64,8 +64,6 @@ func main() {
 		log.Fatalf("Format of service Arith isn't correct, %s", err)
 	}
 
-	rpc.HandleHTTP()
-
 	l, e := net.Listen("tcp", ":8080")
 
 	if e != nil {
