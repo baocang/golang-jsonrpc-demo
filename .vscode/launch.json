@@ -5,25 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Bridge to Kubernetes",
-            "type": "go",
-            "request": "launch",
-            "mode": "auto",
-            "program": "${workspaceFolder}",
-            "env": {},
-            "args": [],
-            "preLaunchTask": "bridge-to-kubernetes.service"
-        },
-        {
-            "name": "Cloud Code",
-            "type": "cloudcode.kubernetes",
-            "request": "launch",
-            "skaffoldConfig": "${workspaceFolder}/skaffold.yaml",
-            "watch": true,
-            "cleanUp": true,
-            "portForward": true
-        },
-        {
             "name": "Launch Package",
             "type": "go",
             "request": "launch",
