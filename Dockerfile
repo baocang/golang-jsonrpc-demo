@@ -1,4 +1,4 @@
-FROM golang:1.16.0 as build
+FROM golang:1.16.2 as build
 
 WORKDIR /golang-jsonrpc-demo
 EXPOSE 8080
