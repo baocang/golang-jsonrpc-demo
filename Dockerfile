@@ -4,7 +4,7 @@ WORKDIR /golang-jsonrpc-demo
 EXPOSE 8080
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GOARM=6 go build -ldflags '-w -s' -o app
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags '-w -s' -o app
 
 FROM scratch
 
