@@ -9,4 +9,6 @@ down:
 	kubectl delete -f ./k8s/service.yaml
 	kubectl delete -f ./k8s/namespace.yml
 debug:
-	telepresence --method=inject-tcp --swap-deployment golang-jsonrpc --namespace develop --expose 8080
+	telepresence intercept --mount true --port 8080 --env-file .cluster.env --namespace develop golang-jsonrpc
+leave:
+	telepresence leave golang-jsonrpc-develop
